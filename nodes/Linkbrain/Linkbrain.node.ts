@@ -1,11 +1,11 @@
-import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
+import { NodeConnectionType, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
 import { linkDescription } from './resources/link';
 
 export class Linkbrain implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Linkbrain',
 		name: 'linkbrain',
-		icon: { light: 'file:linkbrain.svg', dark: 'file:linkbrain.dark.svg' },
+		icon: "file:linkbrain.svg",
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
@@ -13,9 +13,8 @@ export class Linkbrain implements INodeType {
 		defaults: {
 			name: 'Linkbrain',
 		},
-		usableAsTool: true,
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
+		inputs: [NodeConnectionType.Main],
+		outputs: [NodeConnectionType.Main],
 		credentials: [{ name: 'linkbrainApi', required: true }],
 		requestDefaults: {
 			baseURL: 'https://app.linkbrain.net/api/v1',
@@ -40,5 +39,6 @@ export class Linkbrain implements INodeType {
 			},
 			...linkDescription
 		],
+		usableAsTool: true,
 	};
 }

@@ -1,6 +1,5 @@
 import type {
 	IAuthenticateGeneric,
-	Icon,
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
@@ -8,11 +7,8 @@ import type {
 
 export class LinkbrainApi implements ICredentialType {
 	name = 'linkbrainApi';
-
 	displayName = 'Linkbrain API';
-	icon = "node:n8n-nodes-linkbrain" as Icon;
-
-	// Link to your community node's README
+	icon = "file:linkbrain.svg";
 	documentationUrl = 'https://github.com/LinkbrainOrg/n8n-nodes-linkbrain?tab=readme-ov-file#credentials';
 
 	properties: INodeProperties[] = [
