@@ -1,5 +1,6 @@
 import type {
 	IAuthenticateGeneric,
+	Icon,
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
@@ -9,9 +10,10 @@ export class LinkbrainApi implements ICredentialType {
 	name = 'linkbrainApi';
 
 	displayName = 'Linkbrain API';
+	icon = "node:n8n-nodes-linkbrain" as Icon;
 
 	// Link to your community node's README
-	documentationUrl = 'https://github.com/org/-linkbrain?tab=readme-ov-file#credentials';
+	documentationUrl = 'https://github.com/LinkbrainOrg/n8n-nodes-linkbrain?tab=readme-ov-file#credentials';
 
 	properties: INodeProperties[] = [
 		{
@@ -36,7 +38,7 @@ export class LinkbrainApi implements ICredentialType {
 	test: ICredentialTestRequest = {
 		request: {
 			baseURL: 'https://app.linkbrain.net/api/v1',
-			url: '/v1/user',
+			url: '/links',
 		},
 	};
 }

@@ -1,11 +1,11 @@
 import type { INodeProperties } from 'n8n-workflow';
 
-const showOnlyForUserCreate = {
+const showOnlyForLinkCreate = {
 	operation: ['create'],
-	resource: ['user'],
+	resource: ['link'],
 };
 
-export const userCreateDescription: INodeProperties[] = [
+export const linkCreateDescription: INodeProperties[] = [
 	{
 		displayName: 'Name',
 		name: 'name',
@@ -13,7 +13,7 @@ export const userCreateDescription: INodeProperties[] = [
 		default: '',
 		required: true,
 		displayOptions: {
-			show: showOnlyForUserCreate,
+			show: showOnlyForLinkCreate,
 		},
 		description: 'The name of the user',
 		routing: {
