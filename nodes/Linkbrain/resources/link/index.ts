@@ -23,9 +23,9 @@ export const linkDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Index',
-				value: 'index',
-				action: 'Link index',
+				name: 'Get Many',
+				value: 'getAll',
+				action: 'Get links',
 				description: 'Get a page of Links',
 				routing: {
 					request: {

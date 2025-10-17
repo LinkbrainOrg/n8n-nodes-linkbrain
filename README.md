@@ -22,7 +22,7 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 The Node supports the following operations.
 
-### Index (List) ### 
+### Get Many ### 
 
 Enumerates the Link objects owned by the Account associated with the Authentication Token.
 
