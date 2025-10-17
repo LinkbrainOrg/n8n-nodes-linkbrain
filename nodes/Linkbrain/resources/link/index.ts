@@ -1,9 +1,15 @@
 import type { INodeProperties } from 'n8n-workflow';
 import { linkCreateDescription } from './create';
 import { linkGetDescription } from './get';
+import { linkDeleteDescription } from './delete';
 
 const showOnlyForLinks = {
 	resource: ['link'],
+};
+
+const showOnlyForLinkIndex = {
+	resource: ['link'],
+	operation: ['index'],
 };
 
 export const linkDescription: INodeProperties[] = [
@@ -30,6 +36,7 @@ export const linkDescription: INodeProperties[] = [
 							pageSize: '={{$parameter["pageSize"]}}',
 						},
 					},
+		
 					output: {
 						postReceive: [
 							{
@@ -66,8 +73,20 @@ export const linkDescription: INodeProperties[] = [
 					},
 				},
 			},
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete a Link',
+				description: 'Delete a Link',
+				routing: {
+					request: {
+						method: 'DELETE',
+						url: '=/links/{{$parameter.linkId}}',
+					},
+				},
+			},
 		],
-		default: 'getAll',
+		default: 'index',
 	},
 	{
 		displayName: 'Page Number',
@@ -75,10 +94,7 @@ export const linkDescription: INodeProperties[] = [
 		type: 'number',
 		default: 0,
 		displayOptions: {
-			show: {
-				operation: ['index'],
-				resource: ['link']
-			},
+			show: showOnlyForLinkIndex,
 		},
 		description: 'Page to return, starting from 0',
 	},
@@ -92,13 +108,11 @@ export const linkDescription: INodeProperties[] = [
 			maxValue: 50,
 		},
 		displayOptions: {
-			show: {
-				operation: ['index'],
-				resource: ['link']
-			},
+			show: showOnlyForLinkIndex,
 		},
 		description: 'Number of results to return per page',
 	},
 	...linkGetDescription,
 	...linkCreateDescription,
+	...linkDeleteDescription,
 ];
