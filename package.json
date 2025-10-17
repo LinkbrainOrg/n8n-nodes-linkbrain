@@ -1,14 +1,14 @@
 {
   "name": "n8n-nodes-linkbrain",
   "version": "0.1.0",
-  "description": "",
+  "description": "Node package for n8n to interact with the Linkbrain API",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://linkbrain.net",
   "keywords": ["n8n-community-node-package"],
   "author": { "name": "Oliver Weichhold", "email": "oliver.weichhold@pm.me" },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/LinkbrainOrg/n8n-nodes-linkbrain.git"
   },
   "scripts": {
     "build": "n8n-node build",

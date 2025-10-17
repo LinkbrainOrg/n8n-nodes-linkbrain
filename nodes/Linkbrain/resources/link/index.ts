@@ -25,7 +25,7 @@ export const linkDescription: INodeProperties[] = [
 			{
 				name: 'Index',
 				value: 'index',
-				action: 'Link Index',
+				action: 'Link index',
 				description: 'Get a page of Links',
 				routing: {
 					request: {
@@ -52,7 +52,7 @@ export const linkDescription: INodeProperties[] = [
 			{
 				name: 'Get',
 				value: 'get',
-				action: 'Get a Link',
+				action: 'Get a link',
 				description: 'Get the data of a single Link',
 				routing: {
 					request: {
@@ -64,7 +64,7 @@ export const linkDescription: INodeProperties[] = [
 			{
 				name: 'Create',
 				value: 'create',
-				action: 'Create a new Link',
+				action: 'Create a new link',
 				description: 'Create a new Link',
 				routing: {
 					request: {
@@ -76,7 +76,7 @@ export const linkDescription: INodeProperties[] = [
 			{
 				name: 'Delete',
 				value: 'delete',
-				action: 'Delete a Link',
+				action: 'Delete a link',
 				description: 'Delete a Link',
 				routing: {
 					request: {

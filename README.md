@@ -1,8 +1,8 @@
 # n8n-nodes-linkbrain
 
-This is an n8n community node. It lets you use _app/service name_ in your n8n workflows.
+This is an n8n community node. It lets you use Linkbrain in your n8n workflows.
 
-_App/service name_ is _one or two sentences describing the service this node integrates with_.
+Linkbrain is a Link shortener with automatic Amazon localization for Creatives and Affiliates.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/sustainable-use-license/) workflow automation platform.
 
@@ -20,27 +20,69 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Operations
 
-_List the operations supported by your node._
+The Node supports the following operations.
+
+### Index (List) ### 
+
+Enumerates the Link objects owned by the Account associated with the Authentication Token.
+
+#### Parameters ####
+
+- **Page**: The page of Links to retrieve, starting at 0.
+- **Page Size**: How many results per Page to return. Maximum 50.
+
+### Get ### 
+
+Returns the Link with the specified Id.
+
+#### Parameters ####
+
+**Id**: The Id of the Link
+
+### Create ### 
+
+Creates a new Link, or returns returns an existing one.
+
+#### Parameters ####
+
+- **Url**: The source URL of the Link. If the domain the Url points to, is not (yet) supported by the service, the operation fails with a HTTP Status Code 400.
+- **Tags**: A string containing a comma separated list of Tags to assign to the newly created Link. Tag names may only contain alpha-numeric characters and no whitespace.
+- **Allow Recycle**: The parameter controls whether to re-use an existing link if it points to the same URL
+
+### Delete ### 
+
+Deletes the Link with the specified Id.
+
+#### Parameters ####
+
+**Id**: The Id of the Link
 
 ## Credentials
 
-_If users need to authenticate with the app/service, provide details here. You should include prerequisites (such as signing up with the service), available authentication methods, and how to set them up._
+This Node operates on the **Linkbrain REST API**. To access the API, you must authenticate each request using a **Bearer Token** associated with your account. 
+
+### Prerequisites 
+
+Before you can generate a token, you'll need a LinkBrain account. 
+
+1. **Sign up for free** at [https://app.linkbrain.net/signup](https://app.linkbrain.net/signup) 
+2. **Sign in** to your account at [https://app.linkbrain.net](https://app.linkbrain.net/signin) 
+
+### Obtaining an API Token 
+
+Once signed in, you can generate your personal API token: 
+
+1. Navigate to **Integrations → API**, or open [https://app.linkbrain.net/integrations/api](https://app.linkbrain.net/integrations/api) directly. 
+2. Click **Generate Token** to create a new Bearer Token. 
+3. Copy the token --- you'll need it for authenticating API requests. 
+> 
+> **Note:** Treat your API token like a password. Do not share it publicly or embed it in client-side code. 
 
 ## Compatibility
 
-_State the minimum n8n version, as well as which versions you test against. You can also include any known version incompatibility issues._
-
-## Usage
-
-_This is an optional section. Use it to help users with any difficult or confusing aspects of the node._
-
-_By the time users are looking for community nodes, they probably already know n8n basics. But if you expect new users, you can link to the [Try it out](https://docs.n8n.io/try-it-out/) documentation to help them get started._
+This Node has been tested successfully with n8n 1.115.3
 
 ## Resources
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
-* _Link to app/service documentation._
-
-## Version history
-
-_This is another optional section. If your node has multiple versions, include a short description of available versions and what changed, as well as any compatibility impact._
+* [Linkbrain API Playground](https://app.linkbrain.net/scalar/v1)

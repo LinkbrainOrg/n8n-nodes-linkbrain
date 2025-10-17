@@ -28,7 +28,7 @@ export const linkCreateDescription: INodeProperties[] = [
 		displayOptions: {
 			show: showOnlyForLinkCreate,
 		},
-		description: 'Link Url. Must point to a supported domain.',
+		description: 'Link URL. Must point to a supported domain.',
 		routing: {
 			send: {
 				type: 'body',
@@ -41,11 +41,10 @@ export const linkCreateDescription: INodeProperties[] = [
 		name: 'tags',
 		type: 'string',
 		default: '',
-		required: false,
 		displayOptions: {
 			show: showOnlyForLinkCreate,
 		},
-		description: 'Comma separated list of Tags to assign to the created link',
+		description: 'Comma-separated list of Tags to assign to the created link',
 		routing: {
 			send: {
 				preSend: [transformTags],
@@ -59,11 +58,10 @@ export const linkCreateDescription: INodeProperties[] = [
 		name: 'allowRecycle',
 		type: 'boolean',
 		default: true,
-		required: false,
 		displayOptions: {
 			show: showOnlyForLinkCreate,
 		},
-		description: 'If a link exists pointing to the same Url, it will be re-used instead of creating a new one.',
+		description: 'Whether to re-use an existing link if it points to the same URL',
 		routing: {
 			send: {
 				type: 'body',
