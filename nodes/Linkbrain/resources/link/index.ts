@@ -86,7 +86,7 @@ export const linkDescription: INodeProperties[] = [
 				},
 			},
 		],
-		default: 'index',
+		default: 'getAll',
 	},
 	{
 		displayName: 'Page Number',
