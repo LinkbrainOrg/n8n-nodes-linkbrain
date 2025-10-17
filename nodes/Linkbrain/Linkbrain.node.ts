@@ -39,6 +39,7 @@ export class Linkbrain implements INodeType {
 			},
 			...linkDescription
 		],
+		// @ts-expect-error: Unrecognized property usableAsTool, yet n8n-lint insists on its presence
 		usableAsTool: true,
 	};
 }
