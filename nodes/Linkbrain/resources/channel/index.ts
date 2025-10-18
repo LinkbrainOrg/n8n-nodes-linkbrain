@@ -26,7 +26,7 @@ export const channelDescription: INodeProperties[] = [
 				name: 'Get Many',
 				value: 'getAll',
 				action: 'Get channels',
-				description: 'Get all Channels',
+				description: 'Get many Channels',
 				routing: {
 					request: {
 						method: 'GET',
