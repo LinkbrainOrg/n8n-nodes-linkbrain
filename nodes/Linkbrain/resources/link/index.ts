@@ -9,7 +9,7 @@ const showOnlyForLinks = {
 
 const showOnlyForLinkIndex = {
 	resource: ['link'],
-	operation: ['index'],
+	operation: ['getAll'],
 };
 
 export const linkDescription: INodeProperties[] = [
@@ -36,7 +36,6 @@ export const linkDescription: INodeProperties[] = [
 							pageSize: '={{$parameter["pageSize"]}}',
 						},
 					},
-		
 					output: {
 						postReceive: [
 							{

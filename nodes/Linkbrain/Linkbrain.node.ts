@@ -1,5 +1,6 @@
 import { NodeConnectionType, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
 import { linkDescription } from './resources/link';
+import { channelDescription } from './resources/channel';
 
 export class Linkbrain implements INodeType {
 	description: INodeTypeDescription = {
@@ -34,10 +35,15 @@ export class Linkbrain implements INodeType {
 						name: 'Link',
 						value: 'link',
 					},
+					{
+						name: 'Channel',
+						value: 'channel',
+					},
 				],
 				default: 'link',
 			},
-			...linkDescription
+			...linkDescription,
+			...channelDescription,
 		],
 		// @ts-expect-error: Unrecognized property usableAsTool, yet n8n-lint insists on its presence
 		usableAsTool: true,
