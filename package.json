@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-linkbrain",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Node package for n8n to interact with the Linkbrain API",
   "license": "MIT",
   "homepage": "https://linkbrain.net",
